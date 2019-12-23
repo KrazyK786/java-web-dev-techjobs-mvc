@@ -33,12 +33,11 @@
         </div>
     </div>
 
-    <div th:fragment="display-jobs" class="container body-content">
     
-        <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
     
+        
         <!-- TODOcomplete #1 - Use a loop to display job results in a table. -->
-        <table th:block  th:each="job : ${jobs}" class="table job-listing">
+        <table th:fragment="display-jobs"  th:block  th:each="job : ${jobs}" class="table job-listing">
             <tbody>
             <tr>
                 <td>ID</td>
@@ -67,8 +66,6 @@
         
             </tbody>
         </table>
-
-    </div>
 
 </body>
 </html>
