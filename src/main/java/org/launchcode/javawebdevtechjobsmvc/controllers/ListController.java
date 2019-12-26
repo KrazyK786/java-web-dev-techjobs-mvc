@@ -20,6 +20,7 @@ public class ListController {
 
     static HashMap<String, String> columnChoices = new HashMap<>();
     static HashMap<String, Object> tableChoices = new HashMap<>();
+    static HashMap<String,String> descriptors = new HashMap<>();
 
     public ListController () {
         columnChoices.put("all", "All");
@@ -33,6 +34,14 @@ public class ListController {
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
+        
+        // initialize descriptors
+        descriptors.put("id","id");
+        descriptors.put("name","name");
+        descriptors.put("employer","employer");
+        descriptors.put("location","location");
+        descriptors.put("positionType","position type");
+        descriptors.put("skill","skill");
     }
 
     @RequestMapping(value = "")
@@ -58,6 +67,8 @@ public class ListController {
             model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
         }
         model.addAttribute("jobs", jobs);
+        
+        model.addAttribute("descriptors",descriptors);
 
         return "list-jobs";
     }
