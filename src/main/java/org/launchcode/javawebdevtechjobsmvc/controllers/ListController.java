@@ -41,7 +41,7 @@ public class ListController {
         descriptors.put("employer","employer");
         descriptors.put("location","location");
         descriptors.put("positionType","position type");
-        descriptors.put("skill","skill");
+        descriptors.put("coreCompetency","skill");
     }
 
     @RequestMapping(value = "")

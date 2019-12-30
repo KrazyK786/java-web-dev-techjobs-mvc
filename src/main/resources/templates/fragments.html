@@ -49,19 +49,31 @@
             </tr>
             <tr>
                 <td th:text="${#strings.capitalizeWords(descriptors.employer)}">Employer</td>
-                <td th:text="|${job.getEmployer()}|"></td>
+                <td>
+                    <a th:text="|${job.getEmployer()}|"
+                       th:href="@{/list/jobs(column=employer,value=${job.getEmployer()})}"></a>
+                </td>
             </tr>
             <tr>
                 <td th:text="${#strings.capitalizeWords(descriptors.location)}">Location</td>
-                <td th:text="|${job.getLocation()}|"></td>
+                <td>
+                    <a th:text="|${job.getLocation()}|"
+                       th:href="@{/list/jobs(column=location,value=${job.getLocation()})}"></a>
+                </td>
             </tr>
             <tr>
                 <td th:text="${#strings.capitalizeWords(descriptors.positionType)}">Position Type</td>
-                <td th:text="|${job.getPositionType()}|"></td>
+                <td>
+                    <a th:text="|${job.getPositionType()}|"
+                       th:href="@{/list/jobs(column=positionType,value=${job.getPositionType()})}"></a>
+                </td>
             </tr>
             <tr>
-                <td th:text="${#strings.capitalizeWords(descriptors.skill)}">Skill</td>
-                <td th:text="|${job.getCoreCompetency()}|"></td>
+                <td th:text="${#strings.capitalizeWords(descriptors.coreCompetency)}">Skill</td>
+                <td>
+                    <a th:text="|${job.getCoreCompetency()}|"
+                    th:href="@{/list/jobs(column=coreCompetency,value=${job.getCoreCompetency()})}"></a>
+                </td>
             </tr>
         
             </tbody>
